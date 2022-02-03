@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Attributes;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers
 {
@@ -8,5 +9,9 @@ namespace Blog.Controllers
     {
         [HttpGet("helth-check")]
         public IActionResult Get() => Ok();
+
+        [HttpGet("helth-check-api")]
+        [ApiKey]
+        public IActionResult GetHelthApi() => Ok();
     }
 }
